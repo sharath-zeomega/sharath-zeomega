@@ -1,0 +1,11 @@
+
+<h4>This is Parent Component</h4>
+<h6>Value coming from child component: {{cdata}}</h6>
+
+Enter Text: <input type="text" #ptext (keyup)="0"/>
+
+<app-child [pdata]='ptext.value' (cevent)="cdata=$event"></app-child>
+
+<a routerLink="products">Product List</a>
+<a routerLink="pipes">Pipes</a>
+<router-outlet></router-outlet>
