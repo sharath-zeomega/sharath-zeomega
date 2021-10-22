@@ -1,0 +1,19 @@
+<h1>Data Binding</h1>
+
+<h3>Interpolation {{name}}</h3>
+
+<h3>Property Binding</h3>
+<img [src]="imgurl" [height]="h" [width]="w" alt="text"/>
+
+<h3>Event binding</h3>
+<button (click)="open()">Ckick Here to see Paragraph</button>
+
+<p *ngIf="view">
+    Welcome to the world of Angular <br>
+    Event Binding
+</p>
+
+<h3>Two Way Binding</h3>
+<input [(ngModel)]="username" /> <br><br>
+
+<h5>Welcome {{username}}</h5>
