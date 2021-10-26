@@ -1,0 +1,66 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" fromControlName="firstName" class="form-control" 
+            [ngClass]="{'is-invalid':submitted && f.firstName.errors}" />
+
+            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+              <div *ngIf="f.firstName.errors.required">
+                FirstName can not be empty
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" fromControlName="lastName" class="form-control" 
+            [ngClass]="{'is-invalid':submitted && f.lastName.errors}" />
+
+            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+              <div *ngIf="f.lastName.errors.required">
+                LastName can not be empty
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" fromControlName="email" class="form-control" 
+            [ngClass]="{'is-invalid':submitted && f.email.errors}" />
+
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">
+                Email can not be empty
+              </div>
+              <div *ngIf="f.email.errors.email">
+                Enter Valid Email
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" fromControlName="password" class="form-control" 
+            [ngClass]="{'is-invalid':submitted && f.password.errors}" />
+
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">
+                Password can not be empty
+              </div>
+              <div *ngIf="f.password.errors.maxlen">
+                Password length can not be more than 8 characters
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+              <button class="btn btn-primary">Register</button>
+          </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+<app-http></app-http>
+<app-customer-login></app-customer-login>
+<router-outlet></router-outlet>
