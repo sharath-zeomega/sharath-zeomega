@@ -19,8 +19,9 @@ getProducts(): Product[] {
 getProduct(id:number):Product {
     this.loggingService.logMessage('Get Product, id: ' + id);
     const product = this.products.find(
-        product => product.id === id
+        product => product.id == id
     )
+   // console.log(product)
     return product as Product; 
 }
 

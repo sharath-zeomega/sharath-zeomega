@@ -22,12 +22,13 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
     this.id=this.route.snapshot.params['id'];
-    this.productsService.getProduct(this.id);
+    //console.log(this.id);
+    this.product=this.productsService.getProduct(this.id);
 
   }
 
   onEdit() {
-    this.router.navigate(['/products', this.id, 'edit']); // http://localhost:4200/products/1/edit
+   // this.router.navigate(['/products', this.id, 'edit']); // http://localhost:4200/products/1/edit
     this.loggingService.logMessage('Product Detail - Edit button clicked.');
   }
 
